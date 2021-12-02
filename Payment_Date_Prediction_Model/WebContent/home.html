@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Highradius</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- For Add, Edit, Delete Icons -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <!-- Header for logos -->
+    <div class="header">
+        <nav>
+            <img id="abc" src="abc.png">
+            <div>
+                <img id="hr" src="logo.png">
+            </div>
+        </nav>
+    </div>
+    <!-- End of Header -->
+    <h4 id="invoice_list">Invoice List</h4>
+    <!-- Table View -->
+    <div class="grid">
+        <!-- Buttons => Add, Edit, and Delete -->
+        <div id="buttons">
+            <button type="button" id="add" class="btns" onclick=Highlight(this)> 
+                <span class="button__icon">
+                    <ion-icon name="add"></ion-icon>
+                </span>
+                <span class="button__text" id="add_btn1">Add</span>
+            </button>
+            <button id="edit" type="button" class="btns" onclick=Highlight(this)>
+                <span class="button__icon">
+                    <ion-icon name="create"></ion-icon>
+                </span>
+                <span class="button__text">Edit</span>
+            </button>
+            <button id="delete" type="button" class="btns" onclick=Highlight(this)>
+                <span class="button__icon">
+                    <ion-icon name="remove"></ion-icon>
+                </span>
+                <span class="button__text">Delete</span>
+            </button>
+            <div class="search_container">
+                <input type="search" placeholder="Search by Invoice Number" id="search" class="search_term">
+                <button type="submit" id="search_btn"><ion-icon name="search"></ion-icon></button>
+            </div>
+        </div>
+        <!-- End of Add, Edit and Delete -->
+        <!-- Table -->
+        <div class="table_grid">
+            <table id="main_table">
+
+            </table>
+        </div>
+    </div>
+    <!-- End of Table View -->
+    <!-- Popup for Add Button -->
+    <div class="popup" id="add_popup">
+        <div class="popup_content">
+            <div class="add_in">
+                <h4 class="add_invoice">Add Invoice</h4>
+                <span class="cancel_icon">
+                    <ion-icon name="close" id="cancel_icon_btn"></span></ion-icon>
+                </span>
+                <hr class="line1">
+            </div>
+            <div class="row">
+                <div class="column">
+                    <form>
+                        <br>
+                        <label>Customer Name <span style="color: #FF5B5B;">*</span></label>
+                        <input type="text" class="t1" id="t11" required>
+                        <br><br>
+                        <label>Customer No. <span style="color: #FF5B5B;">*</span></label>
+                        <input type="text" class="t1" id="t12" required>
+                        <br><br>
+                        <label>Invoice No. <span style="color: #FF5B5B;">*</span></label>
+                        <input type="text" class="t1" id="t13" required>
+                        <br><br>
+                        <label>Invoice Amount <span style="color: #FF5B5B;">*</span></label>
+                        <input type="text" class="t1" id="t14" required>
+                </div>
+                <div class="column">
+                    <br>
+                    <label class="t2_label">Due Date <span style="color: #FF5B5B;">*</span></label>
+                    <input type="date" class="t2" id="t15" required>
+                    <br><br> <label class="t2_label" id="notes">Notes</label>
+                    <textarea cols="5" rows="5" class="ta" id="t16"></textarea>
+                </div>
+            </div>
+            <br>
+            <hr class="line2">
+            <div class="form_buttons">
+                <a href="home.html" class="cancel">Cancel</a>
+                <button class="form_add" type="submit" value="Submit" onclick="add()">Add</button>
+                <button class="form_clear" type="reset" value="Reset">Clear</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End of Add Popup -->
+    <!-- Popup for Edit Button -->
+    <div class="popup1">
+        <div class="popup_content1">
+            <div class="edit_in">
+                <h4 class="edit_invoice">Edit Invoice</h4>
+                <span class="cancel_icon1">
+                    <ion-icon name="close" id="cancel_icon_btn1"></span></ion-icon>
+                </span>
+                <hr class="line3">
+            </div>
+            <div class="row1">
+                <div class="column1">
+                    <form>
+                        <label>Invoice Amount </label>
+                        <input type="text" class="t3"><br><br>
+                        <label>Notes</label>
+                        <textarea cols="5" rows="5" class="ta1"></textarea><br><br>
+                </div>
+            </div>
+            <hr class="line4">
+            <div class="form_buttons1">
+                <a href="home.html" class="cancel">Cancel</a>
+                <button class="form_reset" type="reset" value="Reset">Reset</button>
+                <button class="form_edit" type="submit" value="Submit">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End of Edit Popup -->
+    <!-- Delete Popup -->
+    <div class="popup2">
+        <div class="popup_content2">
+            <div class="delete_in">
+                <h4 class="delete_invoice">Delete record(s)?</h4>
+                <span class="cancel_icon1">
+                    <ion-icon name="close" id="cancel_icon_btn2"></span></ion-icon>
+                </span>
+                <hr class="line5">
+                <div class="row2">
+                    <div class="column2">
+                        <p>You'll lose your record(s) after this action. We can't recover them once you delete. <br> <br>Are you sure you want to <span style="color: #FF5B5B;">permanently delete</span> them?</p>
+                    </div>
+                </div>
+                <hr class="line6">
+                <div class="form_buttons2">
+                    <button class="form_clear1" id="cancel_icon_btn3" type="reset" value="Reset">Cancel</button>
+                    <button class="form_delete" type="submit" value="Submit">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="index.json"></script>
+</body>
+
+</html>

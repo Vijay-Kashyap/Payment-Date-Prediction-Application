@@ -1,0 +1,28 @@
+[{
+        "Customer Name": "MEIJ in",
+        "Customer #": "200780383",
+        "Invoice #": "1930728964",
+        "Invoice Amount": "83597.84",
+        "Due Date": "2020-04-16",
+        "Predicted Paymentment Date": "2020-03-23",
+        "Notes": "Lorem ipsum"
+    },
+    {
+        "Customer Name": "MEIJ in",
+        "Customer #": "200780383",
+        "Invoice #": "1930728964",
+        "Invoice Amount": "83597.84",
+        "Due Date": "2020-04-16",
+        "Predicted Payment Date": "2020-03-23",
+        "Notes": "Lorem ipsum"
+    },
+    {
+        "Customer Name": "MEIJ in",
+        "Customer #": "200780383",
+        "Invoice #": "1930728964",
+        "Invoice Amount": "83597.84",
+        "Due Date": "2020-04-16",
+        "Predicted Paymentment Date": "2020-03-23",
+        "Notes": "Lorem ipsum"
+    }
+]

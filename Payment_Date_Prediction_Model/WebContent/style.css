@@ -1,0 +1,811 @@
+body {
+    margin: 10px 10px 10px 10px;
+    width: 1080px;
+    height: 920px;
+    background: transparent radial-gradient(closest-side at 50% 50%, #58687E 0%, #39495E 100%) 0% 0% no-repeat padding-box;
+    opacity: 1;
+    overflow: hidden;
+}
+
+#hr {
+    top: 22px;
+    left: 843px;
+    width: 235px;
+    height: 50px;
+    background: transparent url('logo.png') 0% 0% no-repeat padding-box;
+    opacity: 1;
+    position: absolute;
+    content: "";
+}
+
+#abc {
+    top: 16px;
+    left: 86px;
+    width: 233px;
+    height: 52px;
+    text-align: left;
+    font: normal normal bold 39px/52px Futura PT;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+nav {
+    width: 100%;
+    height: 30px;
+}
+
+#invoice_list {
+    top: 100px;
+    left: 30px;
+    width: 141px;
+    height: 31px;
+    text-align: left;
+    font: normal normal normal 28px/32px Ubuntu;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    margin-left: 30px;
+}
+
+.grid {
+    top: 160px;
+    left: 20px;
+    width: 1860px;
+    height: 735px;
+    background: #273D49CC 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    opacity: 1;
+    margin-left: 20px;
+}
+
+#buttons {
+    text-align: right;
+}
+
+#add {
+    top: 191px;
+    left: 1136px;
+    width: 99px;
+    height: 40px;
+    border: 1px solid #14AFF1;
+    background-color: transparent;
+    /* border: 1px solid #97A1A9; */
+    border-radius: 10px;
+    opacity: 1;
+    margin-right: 7px;
+    font-family: ubuntu;
+    font-weight: 500;
+    color: #FFFFFF;
+    display: inline-block;
+    /* color: #97A1A9; */
+    cursor: pointer;
+}
+
+#add :hover {
+    color: #FFF;
+    cursor: pointer;
+}
+
+#edit {
+    margin-top: 20px;
+    top: 191px;
+    left: 1255px;
+    width: 102px;
+    height: 40px;
+    border: 1px solid #97A1A9;
+    background-color: transparent;
+    border-radius: 10px;
+    opacity: 1;
+    margin-right: 7px;
+    font-family: ubuntu;
+    font-weight: 500;
+    color: #97A1A9;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#edit :hover {
+    color: #FFF;
+    cursor: pointer;
+}
+
+#delete {
+    top: 191px;
+    left: 1377px;
+    width: 123px;
+    height: 40px;
+    border: 1px solid #97A1A9;
+    background-color: transparent;
+    border-radius: 10px;
+    opacity: 1;
+    margin-right: 7px;
+    font-family: ubuntu;
+    font-weight: 500;
+    color: #97A1A9;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#delete :hover {
+    color: #FFF;
+    cursor: pointer;
+}
+
+#search {
+    top: 30%;
+    left: 1510px;
+    width: 340px;
+    height: 38px;
+    background: #283A46 0% 0% no-repeat padding-box;
+    border: 1px solid #356680;
+    border-radius: 10px;
+    opacity: 1;
+    margin-right: 15px;
+    font-family: ubuntu;
+    font-weight: 500;
+    color: #97A1A9;
+    margin-top: 18px;
+    text-align: initial;
+    text-indent: 4%;
+    color: #FFF;
+    font: normal normal normal 18px/21px Ubuntu;
+}
+
+.search_container {
+    display: inline-flex;
+    position: relative;
+}
+
+.search_term {
+    float: left;
+    padding: 11px;
+    font-size: 17px;
+    outline: none;
+    width: 100%;
+    border: 3px solid #356680;
+    padding: 11px;
+    cursor: text;
+    color: #FFF;
+    font: normal normal normal 18px/21px Ubuntu;
+}
+
+#search_btn {
+    position: absolute;
+    display: inline-flex;
+    width: 30px;
+    height: 40px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    text-align: center;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 300px;
+}
+
+.popup {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.popup_content {
+    height: 509px;
+    width: 1106px;
+    background: #2A3E4C;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    margin-top: 8%;
+}
+
+.t1 {
+    top: 347px;
+    left: 620px;
+    width: 300px;
+    height: 45px;
+    background: #283A46 0% 0% no-repeat padding-box;
+    border: 1px solid #356680;
+    border-radius: 10px;
+    opacity: 1;
+    margin-left: 5%;
+    color: #FFF;
+    padding-left: 3%;
+    font: normal normal normal 20px/22px Ubuntu;
+}
+
+.t2 {
+    top: 347px;
+    left: 1183px;
+    width: 300px;
+    height: 45px;
+    background: #283A46 0% 0% no-repeat padding-box;
+    border: 1px solid #356680;
+    border-radius: 10px;
+    opacity: 1;
+    color: #FFF;
+    padding-left: 3%;
+    font: normal normal normal 20px/22px Ubuntu;
+}
+
+.t2_label {
+    margin-left: 4%;
+    margin-right: -6%;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    /* border: 1px solid #000; */
+    margin-left: -1%;
+    margin-right: -1%;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row {
+    display: flex;
+    margin-left: -2%;
+    padding-left: 2%;
+    margin-right: -2%;
+    padding-right: 2%;
+}
+
+.column {
+    flex: 50%;
+    margin-left: 1%;
+}
+
+.add_invoice {
+    top: 256px;
+    left: 437px;
+    width: 147px;
+    height: 31px;
+    text-align: left;
+    font: normal normal normal 28px/32px Ubuntu;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: capitalize;
+    opacity: 1;
+}
+
+.ta {
+    top: 420px;
+    left: 1183px;
+    width: 300px;
+    height: 191px;
+    background: #283A46 0% 0% no-repeat padding-box;
+    border: 1px solid #356680;
+    border-radius: 10px;
+    opacity: 1;
+    vertical-align: top;
+    color: #FFF;
+    padding-left: 3%;
+    font: normal normal normal 20px/22px Ubuntu;
+}
+
+.cancel {
+    top: 677px;
+    left: 458px;
+    width: 60px;
+    height: 23px;
+    text-align: left;
+    font: normal normal normal 20px/24px Ubuntu;
+    letter-spacing: 0px;
+    color: #14AFF1;
+    opacity: 1;
+    text-decoration: none;
+}
+
+.form_add {
+    float: right;
+    margin-right: 10px;
+    top: 666px;
+    left: 1406px;
+    width: 77px;
+    height: 45px;
+    background: #14AFF1 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    opacity: 1;
+    color: #FFF;
+    font: normal normal normal 18px/20px Ubuntu;
+    cursor: pointer;
+}
+
+.form_clear {
+    float: right;
+    margin-right: 20px;
+    top: 666px;
+    left: 1294px;
+    width: 87px;
+    height: 45px;
+    border: 1px solid #14AFF1;
+    border-radius: 10px;
+    opacity: 1;
+    background: transparent;
+    color: #FFF;
+    font: normal normal normal 18px/20px Ubuntu;
+    cursor: pointer;
+}
+
+.form_buttons {
+    margin-top: 3%;
+    top: 656px;
+    left: 458px;
+    width: 1106px;
+    height: 67px;
+    opacity: 1;
+    margin-left: 1%;
+}
+
+.add_in {
+    top: 226px;
+    left: 407px;
+    width: 1106px;
+    height: 91px;
+    background: #2A3E4C 0% 0% no-repeat padding-box;
+    border-radius: 10px 10px 0px 0px;
+    opacity: 1;
+    margin-top: -1%;
+    margin-left: 1%;
+}
+
+label {
+    top: 357px;
+    left: 437px;
+    width: 163px;
+    height: 23px;
+    text-align: left;
+    font: normal normal normal 20px/24px Ubuntu;
+    letter-spacing: 0.19px;
+    opacity: 1;
+    color: #97A1A9;
+    display: inline-block;
+}
+
+.cancel_icon {
+    float: right;
+    margin-top: -6%;
+    opacity: 1;
+    top: 259px;
+    left: 1459px;
+    width: 24px;
+    height: 24px;
+    background: transparent url('img/baseline-close-24px.png') 0% 0% no-repeat padding-box;
+    opacity: 1;
+    color: #FFF;
+    font-size: 30px;
+    margin-right: 2%;
+}
+
+input[type="date"]:in-range::-webkit-datetime-edit-year-field,
+input[type="date"]:in-range::-webkit-datetime-edit-month-field,
+input[type="date"]:in-range::-webkit-datetime-edit-day-field,
+input[type="date"]:in-range::-webkit-datetime-edit-text {
+    color: transparent;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+hr.line1,
+hr.line2 {
+    border-bottom: 1px solid #1A262F;
+}
+
+hr.line1 {
+    margin-left: -2.7%;
+    margin-right: -0.8%;
+}
+
+hr.line2 {
+    margin-left: -1.8%;
+    margin-right: -1.8%;
+}
+
+#cancel_icon_btn {
+    cursor: pointer;
+}
+
+.popup1 {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.popup_content1 {
+    height: 480px;
+    width: 543px;
+    background: #2A3E4C;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    margin-top: 8%;
+}
+
+.edit_in {
+    top: 226px;
+    left: 407px;
+    width: 543px;
+    height: 91px;
+    background: #2A3E4C 0% 0% no-repeat padding-box;
+    border-radius: 10px 10px 0px 0px;
+    opacity: 1;
+    margin-top: -1%;
+    margin-left: 1%;
+}
+
+.edit_invoice {
+    top: 256px;
+    left: 437px;
+    width: 146px;
+    height: 31px;
+    text-align: left;
+    font: normal normal normal 28px/32px Ubuntu;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: capitalize;
+    opacity: 1;
+    margin-top: 18px;
+}
+
+.cancel_icon1 {
+    float: right;
+    margin-top: -12%;
+    opacity: 1;
+    top: 259px;
+    left: 1459px;
+    width: 24px;
+    height: 24px;
+    background: transparent url('img/baseline-close-24px.png') 0% 0% no-repeat padding-box;
+    opacity: 1;
+    color: #FFF;
+    font-size: 30px;
+    margin-right: 2%;
+    cursor: pointer;
+}
+
+hr.line3,
+hr.line4 {
+    border-bottom: 1px solid #1A262F;
+}
+
+hr.line3 {
+    margin-left: -4.4%;
+    margin-right: -2.7%;
+}
+
+hr.line4 {
+    margin-left: -3.5%;
+    margin-right: -3.6%;
+    margin-bottom: 5%;
+}
+
+.column1 {
+    float: left;
+    width: 50%;
+    /* border: 1px solid #000; */
+    margin-left: -1%;
+    margin-right: -1%;
+}
+
+
+/* Clear floats after the columns */
+
+.row1:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row1 {
+    display: flex;
+    margin-left: -2%;
+    padding-left: 2%;
+    margin-right: -2%;
+    padding-right: 2%;
+}
+
+.column1 {
+    flex: 50%;
+    margin-left: 1%;
+}
+
+.t3 {
+    top: 331px;
+    left: 883px;
+    width: 319px;
+    height: 45px;
+    background: #283A46 0% 0% no-repeat padding-box;
+    border: 1px solid #356680;
+    border-radius: 10px;
+    opacity: 1;
+    color: #FFF;
+    padding-left: 3%;
+    font: normal normal normal 20px/22px Ubuntu;
+}
+
+.ta1 {
+    top: 404px;
+    left: 883px;
+    width: 319px;
+    height: 191px;
+    background: #283A46 0% 0% no-repeat padding-box;
+    border: 1px solid #356680;
+    border-radius: 10px;
+    opacity: 1;
+    vertical-align: top;
+    color: #FFF;
+    padding-left: 3%;
+    font: normal normal normal 20px/22px Ubuntu;
+}
+
+.form_buttons1 {
+    margin-top: 3%;
+    top: 656px;
+    left: 458px;
+    width: 1106px;
+    height: 67px;
+    opacity: 1;
+    margin-left: 1%;
+}
+
+.form_edit {
+    top: 652px;
+    left: 1120px;
+    width: 82px;
+    height: 45px;
+    background: #14AFF1 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    opacity: 1;
+    font: normal normal normal 20px/22px Ubuntu;
+    color: #FFF;
+    letter-spacing: 0;
+    cursor: pointer;
+}
+
+.form_reset {
+    top: 652px;
+    left: 1003px;
+    width: 92px;
+    height: 45px;
+    border: 1px solid #14AFF1;
+    border-radius: 10px;
+    opacity: 1;
+    margin-left: 25%;
+    margin-right: 2%;
+    font: normal normal normal 20px/24px Ubuntu;
+    background: transparent;
+    color: #FFF;
+    letter-spacing: 0;
+    cursor: pointer;
+}
+
+.popup2 {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.popup_content2 {
+    height: 310px;
+    width: 540px;
+    background: #2A3E4C;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    margin-top: 8%;
+}
+
+.delete_in {
+    top: 226px;
+    left: 407px;
+    width: 543px;
+    height: 91px;
+    background: #2A3E4C 0% 0% no-repeat padding-box;
+    border-radius: 10px 10px 0px 0px;
+    opacity: 1;
+    margin-top: -1%;
+    margin-left: 1%;
+}
+
+.delete_invoice {
+    top: 256px;
+    left: 437px;
+    width: 217px;
+    height: 31px;
+    text-align: left;
+    font: normal normal normal 28px/32px Ubuntu;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    margin-top: 18px;
+}
+
+.cancel_icon2 {
+    float: right;
+    margin-top: -12%;
+    opacity: 1;
+    top: 259px;
+    left: 1459px;
+    width: 24px;
+    height: 24px;
+    background: transparent url('img/baseline-close-24px.png') 0% 0% no-repeat padding-box;
+    opacity: 1;
+    color: #FFF;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+hr.line5,
+hr.line6 {
+    border-bottom: 1px solid #1A262F;
+}
+
+hr.line5 {
+    margin-left: -4.4%;
+    margin-right: -2%;
+}
+
+hr.line6 {
+    margin-left: -4.5%;
+    margin-right: -2.2%;
+    margin-top: 1%;
+    margin-bottom: 5%;
+}
+
+.column2 {
+    float: left;
+    width: 50%;
+    /* border: 1px solid #000; */
+    margin-left: -1%;
+    margin-right: -1%;
+}
+
+
+/* Clear floats after the columns */
+
+.row2:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row2 {
+    display: flex;
+    margin-left: -2%;
+    padding-left: 2%;
+    margin-right: -2%;
+    padding-right: 2%;
+}
+
+.column2 {
+    flex: 50%;
+    margin-left: 1%;
+}
+
+.form_buttons2 {
+    margin-top: 3%;
+    top: 656px;
+    left: 458px;
+    width: 1106px;
+    height: 30px;
+    opacity: 1;
+    margin-left: 1%;
+}
+
+.form_delete {
+    top: 652px;
+    left: 1120px;
+    width: 82px;
+    height: 45px;
+    background: #14AFF1 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    opacity: 1;
+    font: normal normal normal 20px/22px Ubuntu;
+    color: #FFF;
+    letter-spacing: 0;
+    cursor: pointer;
+    margin-left: 2%;
+}
+
+.form_clear1 {
+    top: 652px;
+    left: 1003px;
+    width: 92px;
+    height: 45px;
+    border: 1px solid #14AFF1;
+    border-radius: 10px;
+    opacity: 1;
+    margin-left: 30%;
+    font: normal normal normal 20px/24px Ubuntu;
+    background: transparent;
+    color: #FFF;
+    letter-spacing: 0;
+    cursor: pointer;
+}
+
+p {
+    top: 415px;
+    left: 684px;
+    width: 531px;
+    height: 95px;
+    text-align: left;
+    letter-spacing: 0px;
+    opacity: 1;
+    font: normal normal normal 20px/24px Ubuntu;
+    color: #FFF;
+}
+
+
+/* Table */
+
+.table_grid {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    justify-content: center;
+    display: block;
+    padding-top: 5%;
+    align-items: center;
+    border: collapse;
+    padding-left: 16%;
+}
+
+#main_table {
+    background-color: transparent;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 20px;
+}
+
+th {
+    font: normal normal normal 20px/24px Ubuntu;
+    color: transparent;
+}
+
+td {
+    font: normal normal normal 20px/24px Ubuntu;
+    color: transparent;
+}
+
+tr:nth-child(even) {
+    background-color: #000;
+}
